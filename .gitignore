@@ -1,0 +1,22 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform plan output
+*.tfplan
+
+# Crash log files
+crash.log
+
+# .terraform directory (contains providers, modules, etc)
+.terraform/
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# General
+dist
+node_modules

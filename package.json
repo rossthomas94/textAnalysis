@@ -1,0 +1,33 @@
+{
+  "name": "vafo-digital",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "zip:dev": "zip -j dist/lambda-dev.zip dist/index.js",
+    "zip:prod": "zip -j dist/lambda-prod.zip dist/index.js",
+    "deploy:dev": "npm run build && npm run zip:dev",
+    "deploy:prod": "npm run build && npm run zip:prod",
+    "tf:dev": "npm run deploy:dev && terraform apply -var-file=terraform/dev.tfvars -auto-approve",
+    "tf:prod": "npm run deploy:prod && terraform apply -var-file=terraform/prod.tfvars -auto-approve",
+    "lint": "eslint src --ext .ts --fix",
+    "format": "prettier --write 'src/**/*.{ts}'",
+    "test": "vitest --run"
+  },
+  "keywords": [],
+  "author": "Ross",
+  "license": "ISC",
+  "description": "Vafo Digital backend technical test",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.149",
+    "@types/node": "^22.15.20",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "esbuild": "^0.25.4",
+    "eslint": "^9.27.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  }
+}
