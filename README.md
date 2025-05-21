@@ -18,8 +18,8 @@ npm run tf:dev // dev<br>
 npm run zip:prod // for prod<br>
 npm run tf:prod // for prod<br><br>
 
-example of how to test it 
-Once deployed invoke lambda with a request body which includes text:"hello world'
+example of how to test it <br>
+Once deployed invoke lambda with a request body which includes text:"hello world'<br>
 {
     body: {
         text:"hello world"
